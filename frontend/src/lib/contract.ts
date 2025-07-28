@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import SimpleNFTArtifact from "../../../artifacts/contracts/SimpleNFT.sol/SimpleNFT.json";
+import SimpleNFTArtifact from "../../abi/SimpleNFT.json";
 
 export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS || "";
 export const CONTRACT_ABI = SimpleNFTArtifact.abi;
