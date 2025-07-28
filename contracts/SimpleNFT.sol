@@ -40,7 +40,7 @@ contract SimpleNFT is ERC721Enumerable, Ownable {
     }
 
     // Mint a new NFT token to address "to"
-    function safeMint(address to) external onlyOwner returns (uint256) {
+    function safeMint(address to) external returns (uint256) {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
         return tokenId;
