@@ -6,7 +6,7 @@ export default function NFTsPage({ params }: { params: { address: string } }) {
   const { tokenIds, loading, error } = useNFTs(address);
 
   return (
-    <main className="p-8 min-h-screen bg-gray-50">
+    <main className="p-8 min-h-screen bg-gray-60">
       <h1 className="text-2xl font-bold mb-6 text-center">NFTs for {address}</h1>
       {loading && <p className="text-center">Loading...</p>}
       {error && <p className="text-center text-red-500">{error}</p>}
