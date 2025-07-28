@@ -31,11 +31,12 @@ export default function HomePage() {
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const contract = getNFTContract(signer);
-      const to = recipient || await signer.getAddress();
+      const sender = await signer.getAddress();
+      const to = recipient || sender;
       setStatus("Minting...");
       const tx = await contract.safeMint(to);
       await tx.wait();
-      setStatus("Minted successfully!");
+      setStatus(`Minted successfully!\nRecipient: ${to}\nSender: ${sender}`);
       setRecipient("");
     } catch (err: any) {
       setStatus("Error: " + (err.message || err));

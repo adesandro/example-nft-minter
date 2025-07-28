@@ -13,13 +13,11 @@ export default function NFTsPage({ params }: { params: { address: string } }) {
       {tokenIds.length === 0 && !loading && <p className="text-center text-gray-500">No NFTs found.</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {tokenIds.map(id => (
-          <div key={id} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
-            {/* TODO: Fetch and display tokenURI metadata (image, name, etc.) here */}
-            <div className="w-40 h-40 bg-gray-200 rounded mb-4 flex items-center justify-center">
-              <span className="text-gray-400">Image</span>
+          <div key={id} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center transition-transform hover:scale-105 border border-gray-200">
+            <div className="w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded mb-4 flex items-center justify-center">
+              <span className="text-gray-400 text-sm text-center">No image<br/>(metadata not supported)</span>
             </div>
             <div className="font-semibold text-lg mb-2">Token ID: {id}</div>
-            {/* <div className="text-gray-500">Name: ...</div> */}
           </div>
         ))}
       </div>
