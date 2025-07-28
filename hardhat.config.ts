@@ -1,10 +1,9 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-require("dotenv").config();
-require("@nomicfoundation/hardhat-toolbox");
-
-module.exports = {
+const config: HardhatUserConfig = {
   solidity: "0.8.20",
   networks: {
     nexus: {
@@ -14,3 +13,5 @@ module.exports = {
     }
   }
 };
+
+export default config;
